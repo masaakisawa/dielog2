@@ -1,15 +1,84 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    height: 800px;
+}
+
+
+#top_img {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#top_caption {
+    background: #dcdcdc;
+    
+}
+
+#toppages_top {
+    position: relative;
+}
+
+#signup_button {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 5px;
+    background: blue;
+    border: inset 5px white;
+}
+
+
+#users_top {
+    position: relative;
+}
+
+
+#users_top_img {
+    height: 500px;
+    width: 100%;
+}
+
+
+#users_info {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0px;
+    background: green;
+    border: inset 5px white;
+}
+
+#posts_caption {
+    background: #fffaff;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+.posts_box {
+    background: #e6e6fa;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+ul {
+    list-style: none;
+}
+
+.show_caption {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}

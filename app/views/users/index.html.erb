@@ -2,7 +2,7 @@
   <%= image_tag "food_top.jpg", id:"users_top_img" %>
 
   <div id="users_info">
-    <h3>ログイン中のユーザー：</h3>
+    <h3>&ensp;ログイン中のユーザー：<%= current_user.name %>&ensp;</h3>
   </div>
 </div>
 
@@ -13,5 +13,3 @@
     <li class="nav-item"><a href= "#" class="nav-link">お気に入り</a></li>
   </ul>
 </div>
-
-<%=link_to "新規登録", signup_path %>

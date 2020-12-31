@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index]
   
   def index
+    @post = current_user.posts.build
+    @posts = current_user.posts.order(id: :desc).page(params[:page])
   end
 
   def new

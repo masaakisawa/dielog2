@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   has_many :posts
   has_many :favorites
-  has_many :posts, through: :favorites, source: :post
+  has_many :likes, through: :favorites, source: :post
   
   def favorite(post)
     self.favorites.find_or_create_by(post_id: post.id)
@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
   
   def favorite?(post)
-    self.favorites.include?(post)
+    self.likes.include?(post)
   end
   
 end

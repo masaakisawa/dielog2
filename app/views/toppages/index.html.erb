@@ -1,6 +1,11 @@
 <div id="toppages_top">
   <%= image_tag "food_top.jpg", id: "top_img" %>
-  <a href="/signup"><p id="signup_button">&ensp;登録する&ensp;</p></a>
+  
+  <% if logged_in? %>
+    <a href="/posts/new"><p id="signup_button">&ensp;投稿する&ensp;</p></a>
+  <% else %>
+    <a href="/signup"><p id="signup_button">&ensp;登録する&ensp;</p></a>
+  <% end %>
 </div>
 
 <div id="top_caption">

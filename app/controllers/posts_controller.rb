@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     
-    if @post.save
+    if @post.save!
       flash[:success] = "投稿しました！"
       redirect_to @post
     else
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :image).merge(user_id: current_user.id)
   end
 
   def correct_user

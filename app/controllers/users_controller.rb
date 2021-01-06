@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   
   def index
     @posts = Post.order(id: :desc).page(params[:page]).per(9)
-    @my_posts = current_user.posts.order(id: :desc).page(params[:page]).per(9)
-    @fav_posts = current_user.likes.order(id: :desc).page(params[:page]).per(9)
   end
 
   def new
@@ -24,11 +22,11 @@ class UsersController < ApplicationController
   end
   
   def my_posts
-    @my_posts = current_user.posts.order(id: :desc).page(params[:page])
+    @my_posts = current_user.posts.order(id: :desc).page(params[:page]).per(9)
   end
 
   def fav_posts
-    @fav_posts = current_user.likes.order(id: :desc).page(params[:page])
+    @fav_posts = current_user.likes.order(id: :desc).page(params[:page]).per(9)
   end
   
   private

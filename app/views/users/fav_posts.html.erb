@@ -9,5 +9,5 @@
     <li class="nav-item"><a class="nav-link text-dark <%= 'active' if current_page?("/users/#{current_user.id}/fav_posts") %>" href= "/users/<%= current_user.id %>/fav_posts"><h4 class="font-weight-bold">お気に入り</h4></a></li>
   </ul>
   
-  <%= render "users/posts", posts: @posts %>
+  <%= render "users/posts", posts: @fav_posts %>
 </div>

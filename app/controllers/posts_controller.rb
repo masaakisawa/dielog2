@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:edit, :destroy]
   
   def show
     @post = Post.find(params[:id])
@@ -23,12 +23,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-  
-  
-  def edit
-    @post = current_user.posts.find(params[:id])
-  end
-
 
   def update
     @post = current_user.posts.find(params[:id])

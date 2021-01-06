@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index]
   
   def index
-    @posts = Post.order(id: :desc).page(params[:page])
-    @my_posts = current_user.posts.order(id: :desc).page(params[:page])
-    @fav_posts = current_user.likes.order(id: :desc).page(params[:page])
+    @posts = Post.order(id: :desc).page(params[:page]).per(9)
+    @my_posts = current_user.posts.order(id: :desc).page(params[:page]).per(9)
+    @fav_posts = current_user.likes.order(id: :desc).page(params[:page]).per(9)
   end
 
   def new
